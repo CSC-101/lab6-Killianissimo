@@ -64,15 +64,60 @@ class TestCases(unittest.TestCase):
 
 
     # Part 1
-
+    def test_book_selection_sort_1(self):
+        input = [data.Book("Bill", "Sad"),
+                 data.Book("John", "Happy")]
+        expected = [data.Book("John", "Happy"),
+                 data.Book("Bill", "Sad")]
+        output = lab6.selection_sort_books(input)
+        self.assertEqual(expected, output)
+    def test_book_selection_sort_2(self):
+        input = [data.Book("Apple", "Pie"),
+                 data.Book("John", "Cena"),
+                 data.Book("Henry", "Ford"),
+                 data.Book("Killian", "Murphy")]
+        expected = [data.Book("John", "Cena"),
+                    data.Book("Henry", "Ford"),
+                    data.Book("Killian", "Murphy"),
+                    data.Book("Apple", "Pie")]
+        output = lab6.selection_sort_books(input)
+        self.assertEqual(expected, output)
 
     # Part 2
+    def test_swap_case_1(self):
+        input = "HELLO world"
+        expected = "hello WORLD"
+        output = lab6.swap_case(input)
+        self.assertEqual(expected, output)
 
+    def test_swap_case_2(self):
+        input = "ÑFoVZ}4BSw"
+        expected = "ñfOvz}4bsW"
+        output = lab6.swap_case(input)
+        self.assertEqual(expected, output)
 
     # Part 3
-
+    def test_str_translate_1(self):
+        input1 = "banana"
+        input2 = "a"
+        input3 = "4"
+        expected = "b4n4n4"
+        output = lab6.str_translate(input1,input2,input3)
+        self.assertEqual(expected, output)
+    def test_str_translate_2(self):
+        input1 = "nkvdoqpdjk1gp"
+        input2 = "d"
+        input3 = "D"
+        expected = "nkvDoqpDjk1gp"
+        output = lab6.str_translate(input1,input2,input3)
+        self.assertEqual(expected, output)
 
     # Part 4
+    def test_histogram1(self):
+        input = "kfdajf qkajedpfaj  dkaf"
+        expected = {"k":3,"f":4,"d":3,"a":4,"j":3,"q":1,"e":1,"p":1}
+        output = lab6.histogram_letters(input)
+        self.assertEqual(expected,output)
 
 
 
